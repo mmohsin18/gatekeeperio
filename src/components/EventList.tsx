@@ -1,6 +1,3 @@
-
-
-import EventCard from "./EventCard";
 import { CalendarDays, Ticket } from "lucide-react";
 
 export default function EventList() {
