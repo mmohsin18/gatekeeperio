@@ -1,26 +1,22 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ConvexClientProvider } from "@/components/ConvexClientProvider";
-import {ClerkProvider} from "@clerk/nextjs"
 import Header from "@/components/Header";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+const geistSans = Geist({
   variable: "--font-geist-sans",
-  weight: "100 900",
+  subsets: ["latin"],
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+
+const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  weight: "100 900",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Gatekeeper.io",
-  description: "A ticketing service for your events",
+  title: "GatesKeeper",
+  description: "Created by ZEN",
 };
-
 
 export default function RootLayout({
   children,
@@ -32,12 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ConvexClientProvider>
-          <ClerkProvider>
-            <Header/>
-            {children}
-          </ClerkProvider>
-        </ConvexClientProvider>
+        <>
+          <Header />
+          {children}
+        </>
       </body>
     </html>
   );

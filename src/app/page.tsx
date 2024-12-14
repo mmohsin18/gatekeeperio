@@ -1,9 +1,11 @@
-import React from 'react'
+import EventCard from "@/components/EventCard";
+import EventList from "@/components/EventList";
+import Header from "@/components/Header";
 
-function Home() {
+export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <EventList />
+    </div>
+  );
 }
-
-export default Home
